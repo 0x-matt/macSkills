@@ -31,6 +31,7 @@
 
 ## 4. 免费的三方软件驱动  
 
+[FUSE for macOS](https://github.com/osxfuse/osxfuse/releases) 是一款免费的三方软件，同样是为了解决 Mac 读写 NTFS 问题；但是相比上边两款付费的，使用起来要麻烦一些，而且安全性也更低。
 
 
 
