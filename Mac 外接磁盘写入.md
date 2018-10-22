@@ -88,8 +88,6 @@ sudo mkdir /Volumes/NTFS
 ```
 diskutil list
 ```
-
-如下图所示
 ![](/assets/Xnip2018-10-22_15-29-35.png)
 可以看到 Windows_NTFS 字样，它在 /dev/disk2 下边，在最后一列 IDENTIFIER 可以看到 Windows_NTFS 被定义为: disk2s1，已经被 Mac 自动装载。
 
