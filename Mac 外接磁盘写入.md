@@ -1,4 +1,4 @@
-# Mac 外接磁盘写入 NTFS | exFAT
+# Mac 外接磁盘写入 (NTFS | exFAT)
 
 ![](/assets/Xnip2018-10-20_16-26-49.png)
 
