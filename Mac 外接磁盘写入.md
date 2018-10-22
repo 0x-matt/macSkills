@@ -56,13 +56,35 @@
 
 程序员的话可能习惯用 iTerm2 来代替 Terminal；  
 
-先安装 xcode-select ，在终端执行如下指令，如果安装请略过:   
-
-
+1.1> 安装 xcode-select ，在终端执行如下指令，如果安装请略过:
+   
+```
+xcode-select --install
+```
 安装会弹出对话框
  ![](/assets/Xnip2018-10-22_14-54-20.png)
+点击"Install"
 
+1.2> 安装 Homebrew ，在终端执行如下指令，如果安装请略过: 
+```
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+1.3> 使用刚才安装的 Homebrew 安装 ntfs-3g，指令如下: 
 
+```
+brew install ntfs-3g
+```
+1.4> 到此，你可以开始手动管理 NTFS 的读写模式了，先创建一个 NTFS 分区文件夹，这个操作只需要执行一次: 
+```
+sudo mkdir /Volumes/NTFS
+```
+1.5> 当 NTFS 磁盘连接到电脑后，通过下面命令查看磁盘分区列表
+
+```
+diskutil list
+```
+如下图所示
+![](/assets/Xnip2018-10-22_15-00-59.png)
 
 ### 5. 修改
 
