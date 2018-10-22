@@ -1,9 +1,9 @@
-# Mac 外接磁盘读写 NTFS/exFAT
+# Mac 外接磁盘写入 NTFS | exFAT
 
 ![](/assets/Xnip2018-10-20_16-26-49.png)
 
   很多刚接触 Mac 电脑的新人，都会因为 Mac 默认不能写入外接磁盘 \(NTFS格式\) 而苦恼，这个问题或多或少的给你的工作或者生活带来一些困扰；本篇将介绍 Mac 读写外接磁盘的5种方案，不夸张的说，你能在网上搜到的方案这里都有，相信总有一种能适合你。  
-“磁盘读写”: 就是从磁盘读取内容和往磁盘里写内容，一般情况 Mac 可以从一个通过 USB 连接的磁盘 ( U 盘或者移动硬盘这里统称为外接磁盘)里拷贝文件到 Mac 电脑里。但是反过来却不可以，也就是从 Mac 里拷贝文件到外接磁盘(这个过程叫写入)。因为大部分的磁盘初始格式都是 NTFS ，Mac 默认不支持 NTFS 格式的文件写入。NTFS 是 New Technology File System 的缩写，简单来讲就是一种文件系统。[点我了解 NTFS 维基百科。](https://zh.wikipedia.org/zh-hans/NTFS) 
+“磁盘读写”: 就是从磁盘读取内容和往磁盘里写内容，一般情况 Mac 可以从一个通过 USB 连接的磁盘 ( U 盘或者移动硬盘这里统称为外接磁盘)里拷贝文件到 Mac 电脑里。但是反过来却不可以，也就是从 Mac 里拷贝文件到外接磁盘(这个过程叫写入)。因为大部分的磁盘初始格式都是 NTFS ，Mac 默认不支持 NTFS 格式的文件写入。NTFS 是 New Technology File System 的缩写，简单来讲就是一种文件系统。同样 exFAT 也是一种文件系统，如果你听说过早期 Windows 的 FAT32 文件系统，那么你可以把 exFAT 理解为 FAT32 的 64 位版本。 
 
 ## 解决方案
 ---
@@ -39,15 +39,21 @@
 
 ### 3. 付费的三方软件驱动
 
-[Paragon NTFS for Mac  ](http://www.dpbolvw.net/click-3607085-12975586?sid=ct236055)，可以免费试用几天，完全享用需要 130 多 RMB，还好不是订阅制，购买后终身使用，如果官方不再做什么变更的话。  
-付费软件唯一让人不太乐意选择的原因就是它的 '付费'，很多人可能都没有购买软件的习惯，但是付费确实是最省心，最安全的。毕竟 "免费的才是最贵的"。  
-[Tuxera NTFS for Mac](http://www.tuxera.com/products/tuxera-ntfs-for-mac/) 也是一款具有相同功能的付费软件，但是它比 Paragon NTFS for Mac 还要贵上不少，大概 200 RMB 左右。
+1. [Paragon NTFS for Mac  ](http://www.dpbolvw.net/click-3607085-12975586?sid=ct236055)，已经阅读到这里了，看来你的硬盘很可能不是希捷品牌，那么就要付费使用 Paragon NTFS for Mac 了，虽然可以免费试用几天，但完全享用需要 130 多 RMB (具体价格可能随时间推移而发生变动，最好自己去官网看一下)，还好不是订阅制，购买后便可终身使用，如果官方不再做什么变更的话。   
+2. [Tuxera NTFS for Mac](http://www.tuxera.com/products/tuxera-ntfs-for-mac/)，  也是一款具有相同功能的付费软件，但是它比 Paragon NTFS for Mac 还要贵上不少，大概 200 RMB (价格说明同上) 左右。  
+
+付费软件唯一让人不太乐意选择的原因就是它的 '付费' 属性，很多人可能没有购买软件的习惯，但是付费确实是最省心，最安全的。毕竟 "免费的才是最贵的"。 
 
 ### 4. 免费的三方软件驱动  
 
 [FUSE for macOS](https://github.com/osxfuse/osxfuse/releases) 是一款免费的三方软件，同样是为了解决 Mac 读写 NTFS 问题；但是相比上边两款付费的，使用起来要麻烦一些，而且安全性也更低。  
 
 ### 5. 修改
+
+
+### 延伸阅读  
+[ NTFS 维基百科](https://zh.wikipedia.org/zh-hans/NTFS) 
+[ exFAT 维基百科](https://zh.wikipedia.org/wiki/ExFAT)
 
 
 
