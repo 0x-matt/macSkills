@@ -161,8 +161,8 @@ brew uninstall ntfs-3g
 3. 实在没钱，又找不到替代方案，使用了破解版本也没关系，但是不要去传播破解版本。
 
 ## 延伸阅读  
-[ NTFS 维基百科](https://zh.wikipedia.org/zh-hans/NTFS) 
-[ exFAT 维基百科](https://zh.wikipedia.org/wiki/ExFAT)
+[ NTFS 维基百科](https://zh.wikipedia.org/zh-hans/NTFS)  
+[ exFAT 维基百科](https://zh.wikipedia.org/wiki/ExFAT)  
 [ 阮一峰也遇到了 Mac 写入 NTFS 问题](http://www.ruanyifeng.com/blog/2018/10/exfat.html)
 
 
