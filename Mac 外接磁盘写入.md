@@ -56,14 +56,11 @@
 
 程序员的话可能习惯用 iTerm2 来代替 Terminal；  
 
-先安装 xcode-select ，如果安装请略过:   
-
-```
-xcode-select --install
-```
+先安装 xcode-select ，在终端执行如下指令，如果安装请略过:   
 
 
-
+安装会弹出对话框
+ ![](/assets/Xnip2018-10-22_14-54-20.png)
 
 
 
