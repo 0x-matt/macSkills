@@ -56,7 +56,7 @@
 
 程序员的话可能习惯用 iTerm2 来代替 Terminal；  
 
-1.1> 安装 xcode-select ，在终端执行如下指令，如果安装请略过:
+1.1> 安装 xcode-select ，在终端执行如下指令，如果安装请略过(执行一次，下次启动不用安装):
    
 ```
 xcode-select --install
@@ -65,11 +65,11 @@ xcode-select --install
  ![](/assets/Xnip2018-10-22_14-54-20.png)
 点击"Install"
 
-1.2> 安装 Homebrew ，在终端执行如下指令，如果安装请略过: 
+1.2> 安装 Homebrew ，在终端执行如下指令，如果安装请略过 (执行一次，下次启动不用安装): 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-1.3> 使用刚才安装的 Homebrew 安装 ntfs-3g，指令如下: 
+1.3> 使用刚才安装的 Homebrew 安装 ntfs-3g，如果安装请略过(执行一次，下次启动不用安装): 
 
 ```
 brew install ntfs-3g
@@ -84,9 +84,24 @@ sudo mkdir /Volumes/NTFS
 diskutil list
 ```
 如下图所示
-![](/assets/Xnip2018-10-22_15-00-59.png)
-可以看到 Windows_NTFS 字样，它在 /dev/disk2 下边。
+![](/assets/Xnip2018-10-22_15-29-35.png)
+可以看到 Windows_NTFS 字样，它在 /dev/disk2 下边，在最后一列 IDENTIFIER 可以看到 Windows_NTFS 被命名为: disk2s1，已经被 Mac 自动装载。
 
+1.6> 先卸载 disk2s1 
+```
+sudo umount /dev/disk2s1
+```
+
+1.7> 然后用 我们在 1.4 步骤创建的 NTFS 分区代替 /dev/disk2s1 
+```
+sudo /usr/local/bin/ntfs-3g /dev/disk2s1 /Volumes/NTFS -olocal -oallow_other
+```
+done!
+这时候你可以再看看桌面上的外接磁盘图案，你会发现图标发生了神器的变化: 
+![](/assets/Xnip2018-10-22_15-34-26.png)
+
+打开它，开始写入吧！
+其实也不是很复杂，除去第一次安装稍显繁琐，以后我们只需要重复 `1.6` 和 `1.7` 步骤即可。说不定这两行命令还可以让你同事之间装一下13 (^_^)。
 
 
 ### 5. 修改
