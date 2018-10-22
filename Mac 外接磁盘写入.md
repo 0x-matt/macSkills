@@ -56,8 +56,7 @@
 
 程序员的话可能习惯用 iTerm2 来代替 Terminal；  
 
-先安装 xcode-select ，如果安装请略过: 
-
+先安装 xcode-select ，如果安装请略过:   
 
 ```
 xcode-select --install
