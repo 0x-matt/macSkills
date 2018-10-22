@@ -85,18 +85,20 @@ diskutil list
 ```
 如下图所示
 ![](/assets/Xnip2018-10-22_15-29-35.png)
-可以看到 Windows_NTFS 字样，它在 /dev/disk2 下边，在最后一列 IDENTIFIER 可以看到 Windows_NTFS 被命名为: disk2s1，已经被 Mac 自动装载。
+可以看到 Windows_NTFS 字样，它在 /dev/disk2 下边，在最后一列 IDENTIFIER 可以看到 Windows_NTFS 被定义为: disk2s1，已经被 Mac 自动装载。
 
-1.6> 先卸载 disk2s1 
+1.6> 先解除 disk2s1 自动装载  
 ```
 sudo umount /dev/disk2s1
 ```
+执行完这行命令，桌面上的 外接磁盘图案会短暂的消失，别怕，很快会回来的。
+![](/assets/Xnip2018-10-22_15-45-10.png)
 
 1.7> 然后用 我们在 1.4 步骤创建的 NTFS 分区代替 /dev/disk2s1 
 ```
 sudo /usr/local/bin/ntfs-3g /dev/disk2s1 /Volumes/NTFS -olocal -oallow_other
 ```
-done!
+Done!!!
 这时候你可以再看看桌面上的外接磁盘图案，你会发现图标发生了神器的变化: 
 ![](/assets/Xnip2018-10-22_15-34-26.png)
 
