@@ -10,7 +10,7 @@
 ### 1. 希捷 (Seagate) 移动硬盘官方特供的写入 NTFS 的软件
 
 ![](/assets/Xnip2018-10-20_16-35-47.png)  
-　　如果你刚好买的是希捷 (Seagate) 的移动硬盘（如上图，图片仅供参考，理论上只要是希捷品牌的硬盘都可以），Mac 写入的问题就很好解决了，希捷官方提供了磁盘读写软件的免费下载，该软件就是大名鼎鼎的 Paragon NTFS for Mac ，没错正常情况下，该软件是收费的，而且不便宜，现在你可以在希捷的官方网站下载到，但是只是针对希捷的硬盘有效。[点我到希捷官网下载终身免费的 Paragon NTFS for Mac。](https://www.seagate.com/cn/zh/support/downloads/item/ntfs-driver-for-mac-os-master-dl/)
+　　如果你刚好买的是希捷 (Seagate) 的移动硬盘（如上图，图片仅供参考，理论上只要是希捷品牌的硬盘都可以），Mac 写入的问题就很好解决了，希捷官方提供了磁盘读写软件的免费下载，该软件就是大名鼎鼎的 Paragon NTFS for Mac ，没错正常情况下，该软件是收费的，而且不便宜，现在你可以在希捷的官方网站下载到，但是只是针对希捷的硬盘有效。[点我到希捷官网下载免费的 Paragon NTFS for Mac。](https://www.seagate.com/cn/zh/support/downloads/item/ntfs-driver-for-mac-os-master-dl/)
 
 软件的安装和使用都很简单，文末会做介绍。
 
@@ -46,7 +46,27 @@
 
 ### 4. 免费的三方软件驱动  
 
-[FUSE for macOS](https://github.com/osxfuse/osxfuse/releases) 是一款免费的三方软件，同样是为了解决 Mac 读写 NTFS 问题；但是相比上边两款付费的，使用起来要麻烦一些，而且安全性也更低。  
+[FUSE for macOS](https://github.com/osxfuse/osxfuse/releases) 是一款免费的三方软件，同样是为了解决 Mac 读写 NTFS 问题；但是相比上边两款付费软件，使用起来要麻烦一些，需要做一些额外的工作；如果想让 Mac 自动挂载 NTFS 分区，还要替换 Mac 内置的工具，这样做 Mac 的使用安全性会降低。  
+
+首先下载并且安装 [FUSE for macOS](https://github.com/osxfuse/osxfuse/releases) 。
+##### 1. 使用命令行 (Terminal) 软件挂载 NTFS 分区:   
+这种方式相对繁琐，需要操作命令行，不过也就几行命令而已，先来认识一下 Terminal： 应用程序 --> 使用工具 --> 终端。
+
+![](/assets/Xnip2018-10-22_14-50-26.png)
+
+程序员的话可能习惯用 iTerm2 来代替 Terminal；  
+
+先安装 xcode-select ，如果安装请略过: 
+
+
+```
+xcode-select --install
+```
+
+
+
+
+
 
 ### 5. 修改
 
