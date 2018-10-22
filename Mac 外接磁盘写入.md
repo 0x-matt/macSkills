@@ -85,6 +85,9 @@ diskutil list
 ```
 如下图所示
 ![](/assets/Xnip2018-10-22_15-00-59.png)
+可以看到 Windows_NTFS 字样，它在 /dev/disk2 下边。
+
+
 
 ### 5. 修改
 
