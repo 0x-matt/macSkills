@@ -46,18 +46,18 @@
 
 ### 4. 免费的三方软件驱动  
 
-[FUSE for macOS](https://github.com/osxfuse/osxfuse/releases) 是一款免费的三方软件，同样是为了解决 Mac 读写 NTFS 问题；但是相比上边两款付费软件，使用起来要麻烦一些，需要做一些额外的工作；如果想让 Mac 自动挂载 NTFS 分区，还要替换 Mac 内置的工具，这样做 Mac 的使用安全性会降低。  
+[FUSE for macOS](https://github.com/osxfuse/osxfuse/releases) 是一款免费的三方软件，同样是为了解决 Mac 读写 NTFS 问题；但是相比上边两款付费软件，使用起来要麻烦一些，需要做一些额外的工作，手动虽然繁琐一点，但是比较安全；如果想更进一步如果想让 Mac 自动挂载 NTFS 分区，还要替换 Mac 系统内置的 NTFS 工具，则需要承担安全性的风险。
 
 首先下载并且安装 [FUSE for macOS](https://github.com/osxfuse/osxfuse/releases) 。
-##### 1. 使用命令行 (Terminal) 软件挂载 NTFS 分区:   
-这种方式相对繁琐，需要操作命令行，不过也就几行命令而已，先来认识一下 Terminal： 应用程序 --> 使用工具 --> 终端。
+
+##### 1. 手动使用命令行 (Terminal) 软件挂载 NTFS 分区:   
+这种方式相对繁琐，需要操作命令行，不过也就几行命令而已；先来认识一下 Terminal： 应用程序 --> 使用工具 --> 终端。
 
 ![](/assets/Xnip2018-10-22_14-50-26.png)
 
-程序员的话可能习惯用 iTerm2 来代替 Terminal；  
+程序员的话可能习惯用 iTerm2 来代替 Terminal；虽然看起来步骤繁琐，但是请坚持阅读下去，很有可能你仅仅需要执行后边几条命令，并且除去第一次操作会繁琐一些，以后只需要两条命令。  
 
-1.1> 安装 xcode-select ，在终端执行如下指令，如果安装请略过(执行一次，下次启动不用安装):
-   
+1.1> 安装 xcode-select ，在终端执行如下指令，如果安装请略过(执行一次，下次启动不用安装):   
 ```
 xcode-select --install
 ```
@@ -69,20 +69,22 @@ xcode-select --install
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
-1.3> 使用刚才安装的 Homebrew 安装 ntfs-3g，如果安装请略过(执行一次，下次启动不用安装): 
 
+1.3> 使用刚才安装的 Homebrew 安装 ntfs-3g，如果安装请略过(执行一次，下次启动不用安装): 
 ```
 brew install ntfs-3g
 ```
+
 1.4> 到此，你可以开始手动管理 NTFS 的读写模式了，先创建一个 NTFS 分区文件夹，这个操作只需要执行一次: 
 ```
 sudo mkdir /Volumes/NTFS
 ```
-1.5> 当 NTFS 磁盘连接到电脑后，通过下面命令查看磁盘分区列表
 
+1.5> 当 NTFS 磁盘连接到电脑后，通过下面命令查看磁盘分区列表
 ```
 diskutil list
 ```
+
 如下图所示
 ![](/assets/Xnip2018-10-22_15-29-35.png)
 可以看到 Windows_NTFS 字样，它在 /dev/disk2 下边，在最后一列 IDENTIFIER 可以看到 Windows_NTFS 被定义为: disk2s1，已经被 Mac 自动装载。
@@ -91,6 +93,7 @@ diskutil list
 ```
 sudo umount /dev/disk2s1
 ```
+
 执行完这行命令，桌面上的 外接磁盘图案会短暂的消失，别怕，很快会回来的。
 ![](/assets/Xnip2018-10-22_15-45-10.png)
 
@@ -98,15 +101,52 @@ sudo umount /dev/disk2s1
 ```
 sudo /usr/local/bin/ntfs-3g /dev/disk2s1 /Volumes/NTFS -olocal -oallow_other
 ```
+
 Done!!!
 这时候你可以再看看桌面上的外接磁盘图案，你会发现图标发生了神器的变化: 
 ![](/assets/Xnip2018-10-22_15-34-26.png)
 
 打开它，开始写入吧！
-其实也不是很复杂，除去第一次安装稍显繁琐，以后我们只需要重复 `1.6` 和 `1.7` 步骤即可。说不定这两行命令还可以让你同事之间装一下13 (^_^)。
+其实也不是很复杂，除去第一次安装稍显繁琐，以后我们只需要重复 `1.6` 和 `1.7` 步骤即可。说不定这两行命令还可以让你同事之间装一下13 (^_^)。  当然也有可能你讨厌命令行，已经开始倾向去买付费软件了，也开始感受到了 "免费的才是最贵的"。
 
+** 希望上述各种方案你能采纳其中之一，因为后边的方案都缺乏安全性，也不建议去尝试，没必要为了写入磁盘功能承担太大的风险，但是还是介绍一下吧： **
 
-### 5. 修改
+1.8> 接着 1.7 步骤，我们已经结合 FUSE for macOS 和 终端完成了手动控制写入 NTFS 了，但你可能觉得手动还是繁琐，想自动完成，也是可以的，不过想要让 Mac 自动挂载可写入的 NTFS，需要先禁用 '[系统完整性保护](https://www.howtogeek.com/230424/how-to-disable-system-integrity-protection-on-a-mac-and-why-you-shouldnt/)' ，再次申明: 这样做有风险，开始操作前你要考虑清楚。
+
+1.8.1> 重启 Mac 按住 Command + R ，让 Mac 进入 recovery 模式，启动终端执行命令: 
+```
+csrutil disable
+```
+命令会关闭系统完整性保护。
+
+1.8.2>  然后再次正常启动 Mac，再次打开终端，依次执行命令：
+```
+sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.original  
+sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs
+```
+命令会使用 ntfs-3g 工具替换 Mac 中的 NTFS 安装工具。
+
+1.8.3>  然后，再次重启进入 recovery ，恢复系统完性保护。
+```
+csrutil enable
+```
+最后再次正常重启 Mac，Done!!! 不同的系统可能会发生失败，风险自己承担。
+
+**最后的最后如果撤销上述一系列操作，先重复 1.8.1 步骤关闭系统完整性保护，再命令行依次执行: **
+
+```
+sudo rm /sbin/mount_ntfs
+
+sudo mv /sbin/mount_ntfs.original /sbin/mount_ntfs
+
+brew uninstall ntfs-3g
+```
+
+### 5. 实验性方案 /etc/fstab 修改，不建议
+可能你还听说过，通过 nano /etc/fstab 的方式，实现 NTFS 的读写，但是这种方式安全风险更高，也不一定能成功，很有可能升级完系统后又失效了，普通用户大可不要去尝试。笔者自己也没有尝试过这种方式，就不做介绍了。
+
+### 6. 关于安装破解软件
+再中国，还有个特别的办法就是安装破解版本，破解版本的渠道很多
 
 
 ### 延伸阅读  
