@@ -124,22 +124,22 @@ Done!!!
 
 **希望上述各种方案你能采纳其中之一，因为后边的方案都缺乏安全性，也不建议去尝试，没必要为了写入磁盘功能承担太大的风险，但是还是介绍一下吧：**
 
-1.8> 接着 1.7 步骤，我们已经结合 FUSE for macOS 和 终端完成了手动控制写入 NTFS 了，但你可能觉得手动还是繁琐，想自动完成，也是可以的，不过想要让 Mac 自动挂载可写入的 NTFS，需要先禁用 '[系统完整性保护](https://www.howtogeek.com/230424/how-to-disable-system-integrity-protection-on-a-mac-and-why-you-shouldnt/)' ，再次申明: 这样做有风险，开始操作前你要考虑清楚。
+1.8: 接着 1.7 步骤，我们已经结合 FUSE for macOS 和 终端完成了手动控制写入 NTFS 了，但你可能觉得手动还是繁琐，想自动完成，也是可以的，不过想要让 Mac 自动挂载可写入的 NTFS，需要先禁用 '[系统完整性保护](https://www.howtogeek.com/230424/how-to-disable-system-integrity-protection-on-a-mac-and-why-you-shouldnt/)' ，再次申明: 这样做有风险，开始操作前你要考虑清楚。
 
-1.8.1> 重启 Mac 按住 Command + R ，让 Mac 进入 recovery 模式，启动终端执行命令: 
+1.8.1: 重启 Mac 按住 Command + R ，让 Mac 进入 recovery 模式，启动终端执行命令: 
 ```
 csrutil disable
 ```
 命令会关闭系统完整性保护。
 
-1.8.2>  然后再次正常启动 Mac，再次打开终端，依次执行命令：
+1.8.2:  然后再次正常启动 Mac，再次打开终端，依次执行命令：
 ```
 sudo mv /sbin/mount_ntfs /sbin/mount_ntfs.original  
 sudo ln -s /usr/local/sbin/mount_ntfs /sbin/mount_ntfs
 ```
 命令会使用 ntfs-3g 工具替换 Mac 中的 NTFS 安装工具。
 
-1.8.3>  然后，再次重启进入 recovery ，恢复系统完性保护。
+1.8.3:  然后，再次重启进入 recovery ，恢复系统完性保护。
 ```
 csrutil enable
 ```
