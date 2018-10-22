@@ -6,7 +6,7 @@
 “磁盘读写”: 就是从磁盘读取内容和往磁盘里写内容，一般情况 Mac 可以从一个通过 USB 连接的磁盘 ( U 盘或者移动硬盘这里统称为外接磁盘)里拷贝文件到 Mac 电脑里。但是反过来却不可以，也就是从 Mac 里拷贝文件到外接磁盘(这个过程叫写入)。因为大部分的磁盘初始格式都是 NTFS ，Mac 默认不支持 NTFS 格式的文件写入。NTFS 是 New Technology File System 的缩写，简单来讲就是一种文件系统。同样 exFAT 也是一种文件系统，如果你听说过早期 Windows 的 FAT32 文件系统，那么你可以把 exFAT 理解为 FAT32 的 64 位版本。 
 
 ## 解决方案
----
+
 ### 1. 希捷 (Seagate) 移动硬盘官方特供的写入 NTFS 的软件
 
 ![](/assets/Xnip2018-10-20_16-35-47.png)  
@@ -16,7 +16,7 @@
 ![](/assets/Xnip2018-10-22_17-18-27.png)  
 安装后一般都要重启电脑，重启后基本就可以使用了，个别第一次安装的可能勾选了 `只读模式安装` 勾选去掉就可以了。
 ![](/assets/Xnip2018-10-22_17-23-19.png)
-
+---
 ### 2. 新硬盘可以考虑格式化成 exFAT 格式  
 如果是新入手的硬盘 (老硬盘，里边存的文件太多，又不好备份，格式化需要先备份里边的数据)，或者硬盘里文件不多，可以考虑格式化成 exFAT ，exFAT 格式的硬盘 Windows 和 Mac 都原生支持读写，如果你需要经常在 Mac 和 Windows 之间切换，可以考虑将硬盘格式化为 exFAT 格式。具体 exFAT 是什么，以及它的历史，可以去[维基百科 exFAT](https://zh.wikipedia.org/wiki/ExFAT)，毕竟本文重点不是介绍各种文件系统的，让我们专注在解决 MAC 读写磁盘上；总之 exFAT 也是一种文件系统， MAC 和 Windows 都支持原生读写。
 
@@ -39,6 +39,7 @@
 ![](/assets/Xnip2018-10-22_13-36-36.png)
 
 当然很多人可能不是很乐意格式化为 exFAT，因为这种格式占空间，稳定性比较 NTFS 稍微差了点；使用时，如果没有先在电脑上点弹出，就直接拔掉 USB，可能还会在硬盘里生成一些垃圾文件；不过总体问题不是很大，发生数据丢失也是小概率事件。如果你不是特别有电脑使用洁癖的，格式化成 exFAT 是最省心的办法。
+---
 
 ### 3. 付费的三方软件驱动
 
@@ -46,6 +47,7 @@
 2. [Tuxera NTFS for Mac](http://www.tuxera.com/products/tuxera-ntfs-for-mac/)，  也是一款具有相同功能的付费软件，但是它比 Paragon NTFS for Mac 还要贵上不少，大概 200 RMB (价格说明同上) 左右。  
 
 付费软件唯一让人不太乐意选择的原因就是它的 '付费' 属性，很多人可能没有购买软件的习惯，但是付费确实是最省心，最安全的。毕竟 "免费的才是最贵的"。 
+---
 
 ### 4. 免费的三方软件驱动  
 
@@ -60,7 +62,7 @@
 
 程序员的话可能习惯用 iTerm2 来代替 Terminal；虽然看起来步骤繁琐，但是请坚持阅读下去，很有可能你仅仅需要执行后边几条命令，并且除去第一次操作会繁琐一些，以后只需要两条命令。  
 
-1.1> 安装 xcode-select ，在终端执行如下指令，如果安装请略过(执行一次，下次启动不用安装):   
+1.1: 安装 xcode-select ，在终端执行如下指令，如果安装请略过(执行一次，下次启动不用安装):   
 ```
 xcode-select --install
 ```
@@ -69,29 +71,29 @@ xcode-select --install
  ![](/assets/Xnip2018-10-22_14-54-20.png)
 点击"Install"
 
-1.2> 安装 Homebrew ，在终端执行如下指令，如果安装请略过 (执行一次，下次启动不用安装): 
+1.2: 安装 Homebrew ，在终端执行如下指令，如果安装请略过 (执行一次，下次启动不用安装): 
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 ```
 
-1.3> 使用刚才安装的 Homebrew 安装 ntfs-3g，如果安装请略过(执行一次，下次启动不用安装): 
+1.3: 使用刚才安装的 Homebrew 安装 ntfs-3g，如果安装请略过(执行一次，下次启动不用安装): 
 ```
 brew install ntfs-3g
 ```
 
-1.4> 到此，你可以开始手动管理 NTFS 的读写模式了，先创建一个 NTFS 分区文件夹，这个操作只需要执行一次: 
+1.4: 到此，你可以开始手动管理 NTFS 的读写模式了，先创建一个 NTFS 分区文件夹，这个操作只需要执行一次: 
 ```
 sudo mkdir /Volumes/NTFS
 ```
 
-1.5> 当 NTFS 磁盘连接到电脑后，通过下面命令查看磁盘分区列表
+1.5: 当 NTFS 磁盘连接到电脑后，通过下面命令查看磁盘分区列表
 ```
 diskutil list
 ```
 ![](/assets/Xnip2018-10-22_15-29-35.png)
 可以看到 Windows_NTFS 字样，它在 /dev/disk2 下边，在最后一列 IDENTIFIER 可以看到 Windows_NTFS 被定义为: disk2s1，已经被 Mac 自动装载。
 
-1.6> 先解除 disk2s1 自动装载  
+1.6: 先解除 disk2s1 自动装载  
 ```
 sudo umount /dev/disk2s1
 ```
@@ -100,7 +102,7 @@ sudo umount /dev/disk2s1
 
 ![](/assets/Xnip2018-10-22_15-45-10.png)
 
-1.7> 然后用 我们在 1.4 步骤创建的 NTFS 分区代替 /dev/disk2s1 
+1.7: 然后用 我们在 1.4 步骤创建的 NTFS 分区代替 /dev/disk2s1 
 ```
 sudo /usr/local/bin/ntfs-3g /dev/disk2s1 /Volumes/NTFS -olocal -oallow_other
 ```
