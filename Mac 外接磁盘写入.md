@@ -8,6 +8,7 @@
 ## 方案1. 希捷 (Seagate) 移动硬盘官方特供的写入 NTFS 的软件
 
 ![](/assets/Xnip2018-10-20_16-35-47.png)  
+
 如果你刚好买的是希捷 (Seagate) 的移动硬盘（如上图，图片仅供参考，理论上只要是希捷品牌的硬盘都可以），Mac 写入的问题就很好解决了，希捷官方提供了磁盘读写软件的免费下载，该软件就是大名鼎鼎的 Paragon NTFS for Mac ，没错正常情况下，该软件是收费的，而且不便宜，现在你可以在希捷的官方网站下载到，但是只是针对希捷的硬盘有效。[点我到希捷官网下载免费的 Paragon NTFS for Mac。](https://www.seagate.com/cn/zh/support/downloads/item/ntfs-driver-for-mac-os-master-dl/)
 
 软件的安装和使用都很简单，先安装软件：  
