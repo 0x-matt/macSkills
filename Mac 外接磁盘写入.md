@@ -55,7 +55,7 @@
 
 首先下载并且安装 [FUSE for macOS](https://github.com/osxfuse/osxfuse/releases) 。
 
-##### 1. 手动使用命令行 (Terminal) 软件挂载 NTFS 分区:   
+#### 1. 手动使用命令行 (Terminal) 软件挂载 NTFS 分区:   
 这种方式相对繁琐，需要操作命令行，不过也就几行命令而已；先来认识一下 Terminal： 应用程序 --> 实用工具 --> 终端。
 
 ![](/assets/Xnip2018-10-22_14-50-26.png)
