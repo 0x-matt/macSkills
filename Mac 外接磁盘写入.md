@@ -43,8 +43,8 @@
 
 ## 方案3. 付费的三方软件
 
-1. [Paragon NTFS for Mac  ](http://www.dpbolvw.net/click-3607085-12975586?sid=ct236055)，已经阅读到这里了，看来你的硬盘很可能不是希捷品牌，那么就要付费使用 Paragon NTFS for Mac 了，虽然可以免费试用几天，但完全享用需要 130 多 RMB (具体价格可能随时间推移而发生变动，最好自己去官网看一下)，还好不是订阅制，购买后便可终身使用，如果官方不再做什么变更的话。   
-2. [Tuxera NTFS for Mac](http://www.tuxera.com/products/tuxera-ntfs-for-mac/)，  也是一款具有相同功能的付费软件，但是它比 Paragon NTFS for Mac 还要贵上不少，大概 200 RMB (价格说明同上) 左右。  
+1: [Paragon NTFS for Mac  ](http://www.dpbolvw.net/click-3607085-12975586?sid=ct236055)，已经阅读到这里了，看来你的硬盘很可能不是希捷品牌，那么就要付费使用 Paragon NTFS for Mac 了，虽然可以免费试用几天，但完全享用需要 130 多 RMB (具体价格可能随时间推移而发生变动，最好自己去官网看一下)，还好不是订阅制，购买后便可终身使用，如果官方不再做什么变更的话。   
+2: [Tuxera NTFS for Mac](http://www.tuxera.com/products/tuxera-ntfs-for-mac/)，  也是一款具有相同功能的付费软件，但是它比 Paragon NTFS for Mac 还要贵上不少，大概 200 RMB (价格说明同上) 左右。  
 
 付费软件唯一让人不太乐意选择的原因就是它的 '付费' 属性，很多人可能没有购买软件的习惯，但是付费确实是最省心，最安全的。毕竟 "免费的才是最贵的"。 
 
