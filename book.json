@@ -1,4 +1,26 @@
 {
     "Title": "Mac 使用技巧",
-    "languiage": "zh-hans"
+    "languiage": "zh-hans",
+    "plugins": [
+        "atoc",
+        "disqus",
+        "donate"
+    ],
+    "pluginsConfig": {
+        "disqus": {
+            "shortName": "discuss"
+        },
+        "donate": {
+            "wechat": "/assets/IMG_1475.JPG",
+            "alipay": "/assets/IMG_1476.JPG",
+            "title": " ",
+            "button": "打赏",
+            "alipayText": "赞赏一杯星巴克",
+            "wechatText": "请我吃早茶"
+        },
+        "atoc": {
+            "addClass": true,
+            "className": "atoc"
+        }
+    }
 }
