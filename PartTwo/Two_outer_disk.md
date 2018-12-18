@@ -8,17 +8,17 @@ Mac 可以从一个通过 USB 连接的磁盘 ( U 盘或者移动硬盘这里统
 
 ## 方案1. 希捷 (Seagate) 移动硬盘官方特供的写入 NTFS 的软件
 
-<img src="http://img.xiaobotalk.cn/macSkills/macSkills_08.png" width = "20%" />  
+<img src="http://img.xiaobotalk.cn/macSkills/macSkills_08.png" width = "20%" alt="NTFS" />  
 
 如果你刚好买的是希捷 (Seagate) 的移动硬盘（如上图，图片仅供参考，理论上只要是希捷品牌的硬盘都可以），Mac 写入的问题就很好解决了，希捷官方提供了磁盘读写软件的免费下载，该软件就是大名鼎鼎的 Paragon NTFS for Mac ，没错正常情况下，该软件是收费的，而且不便宜，现在你可以在希捷的官方网站下载到，但是只是针对希捷的硬盘有效。[点我到希捷官网下载免费的 Paragon NTFS for Mac。](https://www.seagate.com/cn/zh/support/downloads/item/ntfs-driver-for-mac-os-master-dl/)
 
 软件的安装和使用都很简单，先安装软件：  
 
-<img src="http://img.xiaobotalk.cn/macSkills/macSkills_06.png" width = "50%" />  
+<img src="http://img.xiaobotalk.cn/macSkills/macSkills_06.png" width = "50%" alt="NTFS" />  
 
 安装后一般都要重启电脑，重启后基本就可以使用了，个别第一次安装的可能勾选了 `只读模式安装` 勾选去掉就可以了。  
 
-<img src="http://img.xiaobotalk.cn/macSkills/macSkills_07.png" width = "50%" />
+<img src="http://img.xiaobotalk.cn/macSkills/macSkills_07.png" width = "50%" alt="NTFS" />
 
 ## 方案2. 新硬盘可以考虑格式化成 exFAT 格式  
 如果是新入手的硬盘 (老硬盘，里边存的文件太多，又不好备份，格式化需要先备份里边的数据)，或者硬盘里文件不多，可以考虑格式化成 exFAT ，exFAT 格式的硬盘 Windows 和 Mac 都原生支持读写，如果你需要经常在 Mac 和 Windows 之间切换，可以考虑将硬盘格式化为 exFAT 格式。具体 exFAT 是什么，以及它的历史，可以去[维基百科 exFAT](https://zh.wikipedia.org/wiki/ExFAT)，毕竟本文重点不是介绍各种文件系统的，让我们专注在解决 MAC 读写磁盘上；总之 exFAT 也是一种文件系统， MAC 和 Windows 都支持原生读写。
@@ -27,11 +27,11 @@ Mac 可以从一个通过 USB 连接的磁盘 ( U 盘或者移动硬盘这里统
 
 #### Mac 系统自带的磁盘工具软件，就可以进行格式化了：
 
-<img src="http://img.xiaobotalk.cn/macSkills/macSkills_09.png" width = "20%" />  
+<img src="http://img.xiaobotalk.cn/macSkills/macSkills_09.png" width = "20%" alt="NTFS" />  
 
 打开磁盘工具软件
 
-<img src="http://img.xiaobotalk.cn/macSkills/macSkills_10.png" width = "50%" />
+<img src="http://img.xiaobotalk.cn/macSkills/macSkills_10.png" width = "50%" alt="NTFS" />
 
 1. 选择你要格式化的磁盘
 2. 点击'擦掉'
@@ -39,7 +39,7 @@ Mac 可以从一个通过 USB 连接的磁盘 ( U 盘或者移动硬盘这里统
 
 #### Windows 资源管理器或我的电脑里面选择格式化：
 
-<img src="http://img.xiaobotalk.cn/macSkills/macSkills_11.png" width = "20%" />
+<img src="http://img.xiaobotalk.cn/macSkills/macSkills_11.png" width = "20%" alt="NTFS" />
 
 当然很多人可能不是很乐意格式化为 exFAT，因为这种格式占空间，稳定性比较 NTFS 稍微差了点；使用时，如果没有先在电脑上点弹出，就直接拔掉 USB，可能还会在硬盘里生成一些垃圾文件；不过总体问题不是很大，发生数据丢失也是小概率事件。如果你不是特别有电脑使用洁癖的，格式化成 exFAT 是最省心的办法。
 
@@ -60,7 +60,7 @@ Mac 可以从一个通过 USB 连接的磁盘 ( U 盘或者移动硬盘这里统
 #### 1. 手动使用命令行 (Terminal) 软件挂载 NTFS 分区:   
 这种方式相对繁琐，需要操作命令行，不过也就几行命令而已；先来认识一下 Terminal： 应用程序 --> 实用工具 --> 终端。
 
-<img src="http://img.xiaobotalk.cn/macSkills/macSkills_12.png" width = "20%" />  
+<img src="http://img.xiaobotalk.cn/macSkills/macSkills_12.png" width = "20%" alt="NTFS" />  
 
 程序员的话可能习惯用 iTerm2 来代替 Terminal；虽然看起来步骤繁琐，但是请坚持阅读下去，很有可能你仅仅需要执行后边几条命令，并且除去第一次操作会繁琐一些，以后只需要两条命令。  
 
@@ -71,7 +71,7 @@ xcode-select --install
 
 安装会弹出对话框  
 
-<img src="http://img.xiaobotalk.cn/macSkills/macSkills_02.png" width = "50%" />  
+<img src="http://img.xiaobotalk.cn/macSkills/macSkills_02.png" width = "50%" alt="NTFS" />  
 
 点击"Install"
 
@@ -94,7 +94,7 @@ sudo mkdir /Volumes/NTFS
 ``` shell
 diskutil list
 ``` 
-<img src="http://img.xiaobotalk.cn/macSkills/macSkills_03.png" width = "60%" />  
+<img src="http://img.xiaobotalk.cn/macSkills/macSkills_03.png" width = "60%" alt="NTFS" />  
 
 可以看到 Windows_NTFS 字样，它在 /dev/disk2 下边，在最后一列 IDENTIFIER 可以看到 Windows_NTFS 被定义为: disk2s1，已经被 Mac 自动装载。
 
@@ -105,7 +105,7 @@ sudo umount /dev/disk2s1
 
 执行完这行命令，桌面上的外接磁盘图案会短暂的消失，别怕，很快会回来的。  
 
-<img src="http://img.xiaobotalk.cn/macSkills/macSkills_05.png" width = 20%/>
+<img src="http://img.xiaobotalk.cn/macSkills/macSkills_05.png" width = 20% alt="NTFS" />
 
 **1.7: 然后用 我们在 1.4 步骤创建的 NTFS 分区代替 /dev/disk2s1** 
 ``` shell
@@ -115,7 +115,7 @@ sudo /usr/local/bin/ntfs-3g /dev/disk2s1 /Volumes/NTFS -olocal -oallow_other
 Done!!!
 这时候你可以再看看桌面上的外接磁盘图案，你会发现图标发生了神器的变化:   
 
-<img src="http://img.xiaobotalk.cn/macSkills/macSkills_04.png" width = 20%/>
+<img src="http://img.xiaobotalk.cn/macSkills/macSkills_04.png" width = 20% alt="NTFS" />
 
 打开它，开始写入吧！
 其实也不是很复杂，除去第一次安装稍显繁琐，以后我们只需要重复 `1.6` 和 `1.7` 步骤即可。当然也有可能你讨厌命令行，已经开始倾向去买付费软件了，也开始感受到了 "免费的才是最贵的"。
